@@ -1,4 +1,6 @@
 import io.restassured.RestAssured;
+import io.restassured.http.Headers;
+import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
@@ -64,7 +66,22 @@ public class DemoTest {
     }
 
 
+    @Test
+    public void practiceTest4(){
+        RestAssured.baseURI="https://reqres.in";
+        RequestSpecification spec = RestAssured.given();
+        Response response = spec.request(Method.GET,"/api/users/2");
+        String statusLine = response.getStatusLine();
+        String headers = response.headers().toString();
+        String age = response.headers().getValue("Age");
+        String server = response.headers().getValue("Server");
+        System.out.println(statusLine);
+       // System.out.println(headers);
+        System.out.println(age);
+        System.out.println(server);
 
+
+    }
 
 
 }
