@@ -12,7 +12,6 @@ external libraries.
 </dependency>
 
 <dependency>
-<<<<<<< HEAD
     <groupId>org.testng</groupId>
 	<artifactId>testng</artifactId>
 	<version>6.14.3</version>
@@ -43,6 +42,8 @@ external libraries.
 * Download and install Git v2.0+
 
 ## Set-up Instructions
+You need to have the following test execution set up
+![screenshot](/images/test_execution_setup.png)
 
 ## How to write Test Cases
 
@@ -71,11 +72,3 @@ If you would like to execute a specific test on specific environment ( default=U
 mvn test -Dtestof="test1" -Denv="Staging"
 ```
 ## How to get Report
-=======
-   <groupId>org.testng</groupId>
-   <artifactId>testng</artifactId>
-   <version>6.14.3</version>
-</dependency>
-   
-```
->>>>>>> 75d3dc9d114182d77176470b72be2176f61ca76b
