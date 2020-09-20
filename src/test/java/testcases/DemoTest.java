@@ -7,12 +7,13 @@ import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.Test;
+import utility.Steps;
 
 public class DemoTest {
 
 
 
-    @Test
+    //@Test
     public void practice_test(){
         String url = "https://reqres.in/api/users/2";
 
@@ -42,7 +43,7 @@ public class DemoTest {
 
     }
 
-    @Test
+   // @Test
     public void starwars_test(){
         String url = "https://swapi.dev/api/people/1/";
         Response response = RestAssured.given().get(url).andReturn();
@@ -57,7 +58,7 @@ public class DemoTest {
     // when: sending request
     //then: validate response
 
-    @Test
+   // @Test
     public void practiceTest3(){
         RestAssured.baseURI="https://reqres.in";
         RequestSpecification httpRequest = RestAssured.given();
@@ -72,15 +73,24 @@ public class DemoTest {
     public void practiceTest4(){
         RestAssured.baseURI="https://reqres.in";
         RequestSpecification spec = RestAssured.given();
+        Steps.log("Preparing GET Request to endpoint /api/users/2");
+
         Response response = spec.request(Method.GET,"/api/users/2");
+        Steps.log("Received a Response from server");
+
         String statusLine = response.getStatusLine();
+        Steps.log(statusLine);
+
         String headers = response.headers().toString();
         String age = response.headers().getValue("Age");
         String server = response.headers().getValue("Server");
-        System.out.println(statusLine);
+        Steps.log("Here is the body");
+        Steps.logJson(response.prettyPrint());
+
+        //System.out.println(statusLine);
        // System.out.println(headers);
-        System.out.println(age);
-        System.out.println(server);
+        //System.out.println(age);
+       // System.out.println(server);
 
 
     }

@@ -2,12 +2,15 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-
     <!-- Project Informaiton -->
     <groupId>alphaleaf</groupId>
     <artifactId>restassuredapi</artifactId>
     <version>1.0.0</version>
 
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
     <!-- Project Dependency-->
     <dependencies>
@@ -28,7 +31,14 @@
             <artifactId>json-path</artifactId>
             <version>2.4.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>4.1.7</version>
+        </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <!--Plugin that is responsible for test execution-->
