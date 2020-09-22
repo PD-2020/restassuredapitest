@@ -9,7 +9,7 @@ import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.Test;
 import utility.Steps;
 
-public class DemoTest {
+public class DemoTest  {
 
 
 
