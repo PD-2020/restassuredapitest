@@ -26,7 +26,7 @@ external libraries.
 |-src
     |---test
         |----java                # allthe java source file needs to be stored in this folder
-              |-[+]testcases     # java class package, all test cases will be stored here
+              |-[+]tests     # java class package, all test cases will be stored here
               |-[+]utility       # java class package, all the utitlity class will be stored here
               |-[+]commons       # java class package, all the common class will be stored here
         |----resources           # resources folder, json files, xml files, excel fiels and reports
