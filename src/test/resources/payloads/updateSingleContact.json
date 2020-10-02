@@ -1,0 +1,13 @@
+{
+  "firstName": "Amy",
+  "lastName": "Smith",
+  "email": "asmith@thinkingtester.com",
+  "location": {
+    "city": "Boston, MA",
+    "country": "USA"
+  },
+  "employer": {
+    "jobTitle": "SDET",
+    "company": "Apple"
+  }
+}

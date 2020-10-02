@@ -1,0 +1,13 @@
+{
+  "firstName": "Shrelock",
+  "lastName": "Holmes",
+  "email": "sherlock@gmail.com",
+  "location": {
+    "city": "New York, NY",
+    "country": "USA"
+  },
+  "employer": {
+    "jobTitle": "Detective",
+    "company": "Sherlock Inc."
+  }
+}

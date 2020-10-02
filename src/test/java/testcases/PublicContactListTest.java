@@ -2,6 +2,7 @@ package testcases;
 
 import commons.ApiConfig;
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.Test;
@@ -45,7 +46,7 @@ public class PublicContactListTest extends ApiConfig {
 
     @Test
     public void register_single_user_file_payload(){
-        String path = System.getProperty("user.dir")+"/src/test/resources/payloads/newUser.txt";
+        String path = System.getProperty("user.dir")+"/src/test/resources/payloads/newUser.json";
         String payload = read(path).trim();
         RestAssured.baseURI = base_uri;
         RequestSpecification spec = RestAssured.given();
@@ -57,6 +58,25 @@ public class PublicContactListTest extends ApiConfig {
         System.out.println(response.getStatusLine());
     }
 
+    @Test
+    public void logout_single_user(){
+        //1.login a user
+        String path = System.getProperty("user.dir")+"/src/test/resources/payloads/newUser.json";
+        String payload = read(path).trim();
+        RestAssured.baseURI=base_uri;
+        Response response = RestAssured.given()                             // .contentType(ContentType.JSON)
+                .contentType("Application/json")       //header("Content-Type","Application/json")
+                .body(payload)
+                .post("/pcl/auth/login");
+        String sessionToken = response.getBody().asString();
+
+        //2. logout a single user
+        Response responseLogout= RestAssured.given()
+                 .header("Authorization",sessionToken)
+                 .get("/pcl/auth/logout");
+        System.out.println("Response status line: " +response.getStatusLine());
+
+    }
 
 
 }

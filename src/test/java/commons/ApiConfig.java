@@ -6,6 +6,8 @@ import java.io.FileReader;
 public class ApiConfig {
 
     public final String base_uri = "https://craftplacer.trexion.com";
+    public final String gameDB_base_uri = "http://localhost:8080/app";
+    public final String gp_contact_base_uri = "http://3.13.86.142:3000";
 
     public String read(String filePath) {
         String finalText = null;
@@ -26,4 +28,14 @@ public class ApiConfig {
         }
         return finalText;
     }
+
+    public String getPayload(String filename){
+        String path =System.getProperty("user.dir")+"/src/test/resources/payloads/"+filename+".json";
+        String payload = read(path).trim();
+        return payload;
+    }
+
+
+
+
 }
